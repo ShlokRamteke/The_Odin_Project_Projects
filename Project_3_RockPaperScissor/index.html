@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="styles.css"
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css">
         <title> Rock Paper Scissor</title>
+        
+        <link
+        href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="favicon.ico" />
+        <script
+        src="https://kit.fontawesome.com/4c536a6bd5.js"
+        crossorigin="anonymous"
+        ></script>
         
     </head>
     <body>
         <header class="header">
-            <h1 class="title"></h1>
+            <h1 class="title"> ROCK PAPER SCISSORS</h1>
         </header>
         <main class="main">
             <div class="scoreboard">
@@ -18,8 +29,10 @@
                     <div class="score-box">
                         <div class="sign" id="playerSign">?</div>
                         <p class="score" id="playerScore">Player : 0</p>
-                        <div class="sign" id="ComputerSign">?</div>
-                        <p class="score" id="ComputerScore">Computer: 0</p>
+                    </div>
+                    <div class="score-box">
+                        <div class="sign" id="computerSign">?</div>
+                        <p class="score" id="computerScore">Computer: 0</p>
                     </div>
                 </div>
             </div>
@@ -30,7 +43,7 @@
                 <button class="btn btn-square" id="paperBtn">
                     <div class="sign">✋</div>
                 </button>
-                <button class="btn btn-square" id="scissorBtn">
+                <button class="btn btn-square" id="scissorsBtn">
                     <div class="sign">✌</div>
                 </button>
             </div>

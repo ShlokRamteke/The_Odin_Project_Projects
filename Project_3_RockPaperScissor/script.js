@@ -1,7 +1,7 @@
 const compArray= ["rock", "paper", "scissor"];
 let roundWinner='';
-let computerScore='';
-let playerScore='';
+let computerScore=0;
+let playerScore=0;
 
 
 function playRround(playerSelection, computerSelection){
@@ -66,7 +66,8 @@ function handleClick(playerSelection){
         return
     }
 
-    const computerSelection = getComputerChoice()
+    const computerSelection = getComputerChoice(compArray)
+    console.log(computerSelection)
     playRround(playerSelection, computerSelection)
     updateChoices(playerSelection, computerSelection)
     updateScore()
@@ -111,20 +112,20 @@ function updateScore(){
     }else if (roundWinner==='computer'){
         scoreInfo.textContent='Computer Wins'
     }
-    playerScorePara.textContent='Player: ${playerScore}'
-    computerScorePara.textContent='Computer: ${computerScore}'
+    playerScorePara.textContent=`Player: ${playerScore}`
+    computerScorePara.textContent=`Computer: ${computerScore}`
 }
 
 function updateScoreMessage(winner, playerSelection, computerSelection){
     if (winner ==='player'){
-        scoreMessage.textContent='${capitalizeFirstLetter(playerSelecion)} beats ${computerSelection}'
+        scoreMessage.textContent= `${capitalizeFirstLetter(playerSelection)} beats ${computerSelection}`
         return
     }
     if (winner ==='computer'){
-        scoreMessage.textContent='${capitalizeFirstLetter(playerSelecion)} is beaten by ${computerSelection}'
+        scoreMessage.textContent=`${capitalizeFirstLetter(playerSelection)} is beaten by ${computerSelection}`
         return
     }
-    scoreMessage.textContent='${capitalizeFirstLetter(playerSelection)} ties with ${computerSelection.toLowerCase()}'
+    scoreMessage.textContent=`${capitalizeFirstLetter(playerSelection)} ties with ${computerSelection.toLowerCase()}`
     return
 }
 
@@ -154,7 +155,7 @@ function restartGame(){
     scoreInfo.textContent='Select your choice'
     scoreMessage.textContent="First to win 5 round, wins the game"
     playerScorePara.textContent='Player : 0'
-    computerScorePara='Computer :0'
+    computerScorePara.textContent='Computer :0'
     playerSign.textContent='?'
     computerSign.textContent='?'
     endgameModal.classList.remove('active')
