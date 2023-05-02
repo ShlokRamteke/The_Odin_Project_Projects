@@ -78,24 +78,34 @@ function changeColour(e) {
         const randomR= Math.floor(Math.random() *256)
         const randomG= Math.floor(Math.random()*256)
         const randomB = Math.floor(Math.random()*256)
-        e.target.style.backgroundColor=`rgb(${randomR}, ${randomG}, ${randomB})`
+        e.target.style.backgroundColor=`rgb(${randomR}, ${randomG}, ${randomB})`;
     } else if (currentMode==='colour') {
-        
+        e.target.style.backgroundColor=currentColour;
+    } else if (currentMode==='erasor') {
+        e.target.style.backgroundColor='#fefefe';
     }
 }
 
+function activateButton(newMode){
+    if (currentMode==='rainbow') {
+        rainbowBtn.classList.remove('active');
+    } else if (currentMode==='erasor'){
+        erasorBtn.classList.remove('active')
+    } else if (currentMode === 'colour') {
+        colourBtn.classList.remove('active')
+    }
 
+    if (newMode==='rainbow') {
+        rainbowBtn.classList.add('active')
+    } else if (newMode==='colour') {
+        colourBtn.classList.add('active')
+    } else if (newMode==='erasor') {
+        erasorBtn.classList.add('active')
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+window.onload = () => {
+    setupGrid(DEFAULT_SIZE)
+    activateButton(DEFAULT_MODE)
+}
 
