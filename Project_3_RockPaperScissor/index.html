@@ -2,9 +2,56 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css"
         <title> Rock Paper Scissor</title>
+        
     </head>
     <body>
-        <script src="Rock.js"></script>
+        <header class="header">
+            <h1 class="title"></h1>
+        </header>
+        <main class="main">
+            <div class="scoreboard">
+                <h2 class="score-info" id="scoreInfo"> Select your choice</h2>
+                <h3 class="score-message" id="scoreMessage"> First to win 5 round, wins the game</h3>
+                <div class="score-container">
+                    <div class="score-box">
+                        <div class="sign" id="playerSign">?</div>
+                        <p class="score" id="playerScore">Player : 0</p>
+                        <div class="sign" id="ComputerSign">?</div>
+                        <p class="score" id="ComputerScore">Computer: 0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="btn btn-square" id="rockBtn">
+                    <div class="sign">✊</div>
+                </button>
+                <button class="btn btn-square" id="paperBtn">
+                    <div class="sign">✋</div>
+                </button>
+                <button class="btn btn-square" id="scissorBtn">
+                    <div class="sign">✌</div>
+                </button>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>
+                Copyright ©
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+                Shlok Ramteke
+            </p>
+            <a href="https://github.com/ShlokRamteke" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </footer>
+        <div class="modal" id="endgameModal">
+            <p class="modal-title" id="endgameMsg"></p>
+            <button class="btn btn-restart" id="restartBtn">Play again</button>
+        </div>
+        <div class="overlay" id="overlay"></div>
+        <script src="script.js"></script>
     </body>
 </html>
